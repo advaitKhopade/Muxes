@@ -12,7 +12,7 @@ def generate_riddle(userinput):
     
     chat_completion = client.chat.completions.create(
     messages=[
-        {"role": "system", "content": "you are a helpful assistant who have a knowledge of riddles."},
+        {"role": "system", "content": "you are a helpful assistant who have a knowledge of riddles. YOu will be given a word and you have to generate a riddle for that word. Do not give the extra information. Just give the riddle as output and nothing else."},
         {
             "role": "user",
             "content": "Generate a riddle for the word {} and just give the riddle as output and nothing else.".format(userinput),
@@ -21,5 +21,3 @@ def generate_riddle(userinput):
     model="mixtral-8x7b-32768",
     )   
     return chat_completion.choices[0].message.content
-
-print(generate_riddle("python"))
