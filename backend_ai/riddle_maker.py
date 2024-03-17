@@ -19,5 +19,7 @@ def generate_riddle(userinput):
         },
     ],
     model="mixtral-8x7b-32768",
-    )
+    )   
     return chat_completion.choices[0].message.content
+
+print(generate_riddle("python"))
